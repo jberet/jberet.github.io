@@ -36,7 +36,7 @@ Here is the spec API codebase:
 
 The overall class diagram of the spec is shown as below:
 
-![](https://raw.githubusercontent.com/jberet/_imgs/jberet_intro/master/uekroPocA7HON_l-WALOu3NmdWAUCgEbhZgmcKFsokb8qrauxFm1CSNdzxLcUmBxvSzEioPUGaVQ8aknoVvIKH9gqGASqZX7oXr-_vYSvXIDIwt2Ya0yGW5lvS36x3U4OOCUOAyzETLnwQ1LltXJIV3nJkujHDxduOs-4XLlpqSGaJ7EbhL8-AM-pJK5.jpg)
+![](https://raw.githubusercontent.com/jberet/jberet.github.io/main/_imgs/jberet_intro/uekroPocA7HON_l-WALOu3NmdWAUCgEbhZgmcKFsokb8qrauxFm1CSNdzxLcUmBxvSzEioPUGaVQ8aknoVvIKH9gqGASqZX7oXr-_vYSvXIDIwt2Ya0yGW5lvS36x3U4OOCUOAyzETLnwQ1LltXJIV3nJkujHDxduOs-4XLlpqSGaJ7EbhL8-AM-pJK5.jpg)
 
 The Job Specification Language is described here:
 
@@ -76,7 +76,7 @@ The above job definition is extracted from the `quarkus-jberet` test code:
 
 From the above job definition we can see that a `job` is combined with `steps`, and in the step there is a `batchlet` that defines an action to run. A `batchlet` is an interface that can define an action to run:
 
-![](https://raw.githubusercontent.com/jberet/_imgs/jberet_intro/master/tUdguE5hFN1hR6isyeFh6KcnypnZC3I4FhwjBpCwyMb0blYthZxPCBEZ10l1dbaO6IBKNRYw05pAH5n4RJRIiIEp-tphK84srMpZFlkyRnBxrFZ9NY0Daf0XuWI4cLwR3aoyYGCL8LSaSWnY9yLDrtsMT1TSXOE8SWO6bkoOzngFdPS9j-cLvU_e6CD7.png)
+![](https://raw.githubusercontent.com/jberet/jberet.github.io/main/_imgs/jberet_intro/tUdguE5hFN1hR6isyeFh6KcnypnZC3I4FhwjBpCwyMb0blYthZxPCBEZ10l1dbaO6IBKNRYw05pAH5n4RJRIiIEp-tphK84srMpZFlkyRnBxrFZ9NY0Daf0XuWI4cLwR3aoyYGCL8LSaSWnY9yLDrtsMT1TSXOE8SWO6bkoOzngFdPS9j-cLvU_e6CD7.png)
 
 It contains a `process()` and a `stop()` interface that allows the user to define the detail actions to take, and the implementation of the Batch API framework	will take the responsibility to run the jobs. The `batchlet` is not the only block that we can use for writing action blocks. Here is another way to define a job:
 
@@ -97,7 +97,7 @@ It contains a `process()` and a `stop()` interface that allows the user to defin
 
 From the above we can see that the `step` contains an element called `chunk`. Inside the chunk, it contains a `reader`, a `processor`, and a `writer`. These definitions are also defined inside the API spec:
 
-![](https://raw.githubusercontent.com/jberet/_imgs/jberet_intro/master/QUFkNVSXybhmbxNQzo6xfNiWYJuNHPndLCaxz8lzBtbAQZ2hcPb9U9-XImazY4ACPi4rVMUBPCL_xsCrfuXc8G0Zae0--e8LCVC5iirtKckxGlzbetYyUKBY21N52LTRVp_b38sF7_xDNCcKSv1G6Fu3bFqRSMFKpd2ZlvBA5dGHTqZufEfFxGhMnrX-.png)
+![](https://raw.githubusercontent.com/jberet/jberet.github.io/main/_imgs/jberet_intro/QUFkNVSXybhmbxNQzo6xfNiWYJuNHPndLCaxz8lzBtbAQZ2hcPb9U9-XImazY4ACPi4rVMUBPCL_xsCrfuXc8G0Zae0--e8LCVC5iirtKckxGlzbetYyUKBY21N52LTRVp_b38sF7_xDNCcKSv1G6Fu3bFqRSMFKpd2ZlvBA5dGHTqZufEfFxGhMnrX-.png)
 
 As we can see above, different from the `batchlet`, which only has a `process()` method and a `stop()` method, a chunk divides actions into three parts: `reader`, `processor` and `writer`. This is more suitable for more complex workflows.
 
@@ -109,7 +109,7 @@ The Batch API just defines the interfaces, and it is the framework’s duty to i
 
 Here is the class diagram of the `jberet-core` (Only part of the classes are included):
 
-![](https://raw.githubusercontent.com/jberet/_imgs/jberet_intro/master/8i-Dp5zZgyOPpQ4KygwfUhXK4BBX32Otf4YtSx3ZLvWSPqXyMprf-bIZNUawf4B-C8eyxToQGv6B9jBQHR7foGYujnpaHfd6qt9JmwLHz5Narhk9RI5FTdRSOyeI3B2mOYQ8Xc_9VX9Gb-fFskfilhmABth8Wnit9IxQPxum5_VLP1ZUihoHBd2gMpkH.jpg)
+![](https://raw.githubusercontent.com/jberet/jberet.github.io/main/_imgs/jberet_intro/8i-Dp5zZgyOPpQ4KygwfUhXK4BBX32Otf4YtSx3ZLvWSPqXyMprf-bIZNUawf4B-C8eyxToQGv6B9jBQHR7foGYujnpaHfd6qt9JmwLHz5Narhk9RI5FTdRSOyeI3B2mOYQ8Xc_9VX9Gb-fFskfilhmABth8Wnit9IxQPxum5_VLP1ZUihoHBd2gMpkH.jpg)
 
 Until now we have learned about the Batch API, and checked several job definition examples, and had a brief look at `JBeret` implementation of the API. Next let’s check several different frameworks and their usages.
 
@@ -121,7 +121,7 @@ There are several projects that implements the specification, and in this articl
 
 This project is used in both WildFly and `Quarkus`. We will have a look at the project firstly, and then see how it is used in WildFly and `Quarkus`. `JBeret` also implements the Batch API, and here is the diagram of the core part of `JBeret` codebase:
 
-![](https://raw.githubusercontent.com/jberet/_imgs/jberet_intro/master/F2f7cuGqqTHt_dK-ga4P0TAO1iucXhbZbh4H6Z-kPrHUhPhhucfNmDY2EIMcLNAmsCGzKdJi1PN4gawmr4nOxycW5RXhwktNwj9Es6CMODS8O91hywqvdhMldTu6Dv8PCNOTy_vPx0NKCpiwzKXGdxEZ4zPwMsRO5Qc768eLxGS843dVlL9YkUcZfqdi.jpg)
+![](https://raw.githubusercontent.com/jberet/jberet.github.io/main/_imgs/jberet_intro/F2f7cuGqqTHt_dK-ga4P0TAO1iucXhbZbh4H6Z-kPrHUhPhhucfNmDY2EIMcLNAmsCGzKdJi1PN4gawmr4nOxycW5RXhwktNwj9Es6CMODS8O91hywqvdhMldTu6Dv8PCNOTy_vPx0NKCpiwzKXGdxEZ4zPwMsRO5Qc768eLxGS843dVlL9YkUcZfqdi.jpg)
 
 We can see `JBeret` has created its own implementation to support the Batch API. To check how to use the framework, `JBeret` has provided a sample project here:
 
@@ -223,7 +223,7 @@ In the sample project it uses `CsvItemReader`([jberet-support/CsvItemReader.java
 
 Here is the class diagram of the reader and writer:
 
-![](https://raw.githubusercontent.com/jberet/_imgs/jberet_intro/master/ZpXZiLAIGJmuZMe8R_8OkApfbousz0XjRP-JSm-InJ_wsrOzq8f6-_iMKx12V4Ns2gVVoKiQfnW9iSVZ92RsNd4Vu6bDL6y0exHoF-uNu3xp4Ca_1zWDkA389jNlTnUofI7QykTQ06--GVh3Px-88S87CpzQ0zFliSoBryfMQkHTxSlO4kMdjuPXTAzO.png)
+![](https://raw.githubusercontent.com/jberet/jberet.github.io/main/_imgs/jberet_intro/ZpXZiLAIGJmuZMe8R_8OkApfbousz0XjRP-JSm-InJ_wsrOzq8f6-_iMKx12V4Ns2gVVoKiQfnW9iSVZ92RsNd4Vu6bDL6y0exHoF-uNu3xp4Ca_1zWDkA389jNlTnUofI7QykTQ06--GVh3Px-88S87CpzQ0zFliSoBryfMQkHTxSlO4kMdjuPXTAzO.png)
 
 As we can see, the `CsvItemReader` can read the CSV file, and the `JsonItemWriter` can convert a list of objects into JSON format and output into a configured destination(File for example).
 
@@ -440,19 +440,19 @@ public void testCsv2Json() throws Exception {
 
 It encapsulates the request detail, but we can use Wireshark to analyze the HTTP call to see what the `request/response` is. Here is the first request the test made to the server side:
 
-![](https://raw.githubusercontent.com/jberet/_imgs/jberet_intro/master/ubnHPk1JVCS1ihJQZyj8tyNMmM42vCSu4b6Ab7jyXaHCDXj5PBRBvn24ZMjOlB3akdsE6xS4mjqGqM7Ky8dWX1Y7aUIHUCYh3qood_MsFZ0GHD7ySHapOTPd3DYlUyWJTzmQ_AyGOiDe942hPOkkBjeo3B_yZILMMgFB3hGUWdsr2ZM1gx85KdYe3FMS.png)
+![](https://raw.githubusercontent.com/jberet/jberet.github.io/main/_imgs/jberet_intro/ubnHPk1JVCS1ihJQZyj8tyNMmM42vCSu4b6Ab7jyXaHCDXj5PBRBvn24ZMjOlB3akdsE6xS4mjqGqM7Ky8dWX1Y7aUIHUCYh3qood_MsFZ0GHD7ySHapOTPd3DYlUyWJTzmQ_AyGOiDe942hPOkkBjeo3B_yZILMMgFB3hGUWdsr2ZM1gx85KdYe3FMS.png)
 
 We can see the test called `/jobs/csv2json/start` to start the job. Then we can see the server returned that the job is created:
 
-![](https://raw.githubusercontent.com/jberet/_imgs/jberet_intro/master/obA9rZTo0GdaNTaLZnE8MZ1gK_RRlCdxsSQfn831-kCzg3qzsR_WyPLgGy7kZzrXFeAwQANwHLiNtl1dE-u_TitY1LDwfJky-Txy9zK6jUgSkahB_AUBSYsFesh_jcSB4M8IcdK-4qM6xksa2DRMEEohJ9JVbteypGOH29Nf4zhYb-XwJgcO2z2uP6t2.png)
+![](https://raw.githubusercontent.com/jberet/jberet.github.io/main/_imgs/jberet_intro/obA9rZTo0GdaNTaLZnE8MZ1gK_RRlCdxsSQfn831-kCzg3qzsR_WyPLgGy7kZzrXFeAwQANwHLiNtl1dE-u_TitY1LDwfJky-Txy9zK6jUgSkahB_AUBSYsFesh_jcSB4M8IcdK-4qM6xksa2DRMEEohJ9JVbteypGOH29Nf4zhYb-XwJgcO2z2uP6t2.png)
 
 We can see `JBeret` REST returns multiple fields about the job, such as  `startTime`, `endTime`, and `jobStatus`. Then the test query the job status:
 
-![](https://raw.githubusercontent.com/jberet/_imgs/jberet_intro/master/5lymwwaPTjG6_c-1TDPUCOMX8e6q26Unq1DiBwyAIIKKOXrsJiAuuXJESSrNezJY-1pZ6Y5E-0ERGbne5gKYbR5HlzYuQ6reeZJonMuerOWkxZBEp-bM-z5vtdnrZ9tl-k1GwE0i9hKnOv5252Kr1G8skRNrP9p-nRA5qAM3QZZm6-CP-aULQDuZHaho.png)
+![](https://raw.githubusercontent.com/jberet/jberet.github.io/main/_imgs/jberet_intro/5lymwwaPTjG6_c-1TDPUCOMX8e6q26Unq1DiBwyAIIKKOXrsJiAuuXJESSrNezJY-1pZ6Y5E-0ERGbne5gKYbR5HlzYuQ6reeZJonMuerOWkxZBEp-bM-z5vtdnrZ9tl-k1GwE0i9hKnOv5252Kr1G8skRNrP9p-nRA5qAM3QZZm6-CP-aULQDuZHaho.png)
 
 The request URI is `/api/jobexecutions/2`, which returns the job status:
 
-![](https://raw.githubusercontent.com/jberet/_imgs/jberet_intro/master/xdqiMZhxfTFPcS6YqtbCO4tRAqHN7joIKdVe3KIFNTfvcJ32tbXNo7LqFkNH7-u_m_kLw7gJpI0YHcc26P3W1gDataUjV9HgrmHYmnDVqpSsp42hO1W_8EkDzSb15GpIPRcW3zbT74LwNfLrp9fNocgb6IcH6cHsOKDEFJE2g8em42K8n7n_dFfYWT1t.png)
+![](https://raw.githubusercontent.com/jberet/jberet.github.io/main/_imgs/jberet_intro/xdqiMZhxfTFPcS6YqtbCO4tRAqHN7joIKdVe3KIFNTfvcJ32tbXNo7LqFkNH7-u_m_kLw7gJpI0YHcc26P3W1gDataUjV9HgrmHYmnDVqpSsp42hO1W_8EkDzSb15GpIPRcW3zbT74LwNfLrp9fNocgb6IcH6cHsOKDEFJE2g8em42K8n7n_dFfYWT1t.png)
 
 After the job is done, we can check the generated JSON file and its content:
 
