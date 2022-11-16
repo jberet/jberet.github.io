@@ -10,7 +10,7 @@ The `Jakarta Batch API` specification defines the interfaces and workflow to pro
 
 - [GitHub - eclipse-ee4j/batch-api: The Jakarta Batch project produces the Batch Specification and API.](https://github.com/eclipse-ee4j/batch-api)
 
-And here is the homepage of the spec: [Jakarta Batch | The Eclipse Foundation](https://jakarta.ee/specifications/batch/)
+And here is the homepage of the spec: [Jakarta Batch / The Eclipse Foundation](https://jakarta.ee/specifications/batch/)
 
 This spec was `JSR352` before:
 
@@ -40,7 +40,7 @@ The overall class diagram of the spec is shown as below:
 
 The Job Specification Language is described here:
 
-- [Jakarta Batch 2.0 | The Eclipse Foundation](https://jakarta.ee/specifications/batch/2.0/)
+- [Jakarta Batch 2.0 / The Eclipse Foundation](https://jakarta.ee/specifications/batch/2.0/)
 
 There are several core concepts in the above spec to define a batch job. For example, here is some code that shows a job definition:
 
@@ -93,7 +93,7 @@ It contains a `process()` and a `stop()` interface that allows the user to defin
 </job>
 ```
 
-(The above job definition is extracted from: https://github.com/quarkiverse/quarkus-jberet/blob/main/core/deployment/src/test/resources/chunk.xml)
+(The above job definition is extracted from: [https://github.com/quarkiverse/quarkus-jberet/blob/main/core/deployment/src/test/resources/chunk.xml](https://github.com/quarkiverse/quarkus-jberet/blob/main/core/deployment/src/test/resources/chunk.xml))
 
 From the above we can see that the `step` contains an element called `chunk`. Inside the chunk, it contains a `reader`, a `processor`, and a `writer`. These definitions are also defined inside the API spec:
 
@@ -117,7 +117,7 @@ Until now we have learned about the Batch API, and checked several job definitio
 
 There are several projects that implements the specification, and in this article I will focus on introducing the `JBeret` project provided by the WildFly community:
 
-- https://github.com/jberet
+- [JBeret - Java Batch Processing Frameworks and Libraries](https://github.com/jberet)
 
 This project is used in both WildFly and `Quarkus`. We will have a look at the project firstly, and then see how it is used in WildFly and `Quarkus`. `JBeret` also implements the Batch API, and here is the diagram of the core part of `JBeret` codebase:
 
@@ -219,7 +219,7 @@ Here is the the project introduction:
 
 > This module provides reusable batch components for common batch tasks.
 
-In the sample project it uses `CsvItemReader`([jberet-support/CsvItemReader.java at master · jberet/jberet-support · GitHub](https://github.com/jberet/jberet-support/blob/master/src/main/java/org/jberet/support/io/CsvItemReader.java)) and `JsonItemWriter`(https://github.com/jberet/jberet-support/blob/master/src/main/java/org/jberet/support/io/JsonItemWriter.java) from the above project.
+In the sample project it uses `CsvItemReader`([jberet-support/CsvItemReader.java at master · jberet/jberet-support · GitHub](https://github.com/jberet/jberet-support/blob/master/src/main/java/org/jberet/support/io/CsvItemReader.java)) and `JsonItemWriter`([https://github.com/jberet/jberet-support/blob/master/src/main/java/org/jberet/support/io/JsonItemWriter.java](https://github.com/jberet/jberet-support/blob/master/src/main/java/org/jberet/support/io/JsonItemWriter.java)) from the above project.
 
 Here is the class diagram of the reader and writer:
 
@@ -379,9 +379,9 @@ Because the sample project has embedded WildFly plugin in `pom.xml`:
 
 ```xml
 <plugin>
-		<groupId>org.wildfly.plugins</groupId>
-		<artifactId>wildfly-maven-plugin</artifactId>
-		...
+    <groupId>org.wildfly.plugins</groupId>
+    <artifactId>wildfly-maven-plugin</artifactId>
+    ...
 </plugin>
 ```
 
