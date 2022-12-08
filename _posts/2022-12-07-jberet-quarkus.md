@@ -46,7 +46,7 @@ In the above code, it creates the test JAR archive, and it puts the `batchlet.xm
 
 - https://github.com/quarkiverse/quarkus-jberet/blob/main/core/deployment/src/test/resources/batchlet.xml
 
-The `batchlet.xml` defines a basic `batchlet` for testing:
+The `batchlet.xml` defines a basic batch job called `batchlet-job` for testing:
 
 ```xml
 <job id="batchlet-job" xmlns="http://xmlns.jcp.org/xml/ns/javaee" version="1.0">
@@ -60,7 +60,7 @@ The `batchlet.xml` defines a basic `batchlet` for testing:
 </job>
 ```
 
-In the above job definition, it defines a `batchlet` which refers to an implementation just called `batchlet`, and it defines a property called `name`, which reads the value from a parameter `#{jobParameters['name']}`. The `batchlet` and its `name` are all defined in the `BatchletTest` code:
+In the above `batchlet-job`, it defines a batchlet just called `batchlet`. In the `batchlet` it defines a property called `name`, which reads the value from a parameter `#{jobParameters['name']}`. The `batchlet` and its `name` are all defined in the `BatchletTest` code:
 
 ```java
 @Named("batchlet")
@@ -101,12 +101,16 @@ public void runBatchletJob() {
 }
 ```
 
-The `runBatchletJob` setup the `name` property, and then start the `batchlet` job, and then it will wait for 5 seconds for the job to be finished, and check the job status properly. Now we can run the test by running the following commands in the test directory:
+In the above test, it sets the `name` property to be used for execution, and then it starts the `batchlet` defined in the `batchlet-job`. After the `batchlet` is running, the test waits for 5 seconds for the execution to be finished, and then check the task finished. 
+
+Now we can run the test by running the following commands in the test directory:
 
 ```bash
 ➤ pwd
 /Users/weli/works/quarkus-jberet/core/deployment
 ```
+
+Here is the command to run the test:
 
 ```bash
 ➤ mvn test -Dtest=BatchletTest
