@@ -2,7 +2,7 @@
 layout:     post
 title:      "The usage of BatchSEEnvironment in JBeret"
 subtitle:   ""
-date:       2024-01-12
+date:       2024-01-11
 author:     Wei Nan Li
 ---
 
