@@ -26,7 +26,7 @@ After everything is ready, the script will run three kinds of the tests provided
 
 To see the above steps in action, you can check one of the running tests in GitHub. Here is one of the run process:
 
-- [https://github.com/jberet/jberet-tck-runner/actions/runs/8319441676][https://github.com/jberet/jberet-tck-runner/actions/runs/8319441676]
+- [https://github.com/jberet/jberet-tck-runner/actions/runs/8319441676](https://github.com/jberet/jberet-tck-runner/actions/runs/8319441676)
 
 The above link contains the detail running process output run by GitHub CI. The script is configured to be run daily.
 
