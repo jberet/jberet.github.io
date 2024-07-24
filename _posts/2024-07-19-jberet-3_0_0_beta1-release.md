@@ -25,10 +25,12 @@ In addition, it removes some unnecessary API dependencies:
 - [Remove the dependency of jakarta.persistence-api #536](https://github.com/jberet/jsr352/pull/536)
 - [Remove the dependency of the validation-api #540](https://github.com/jberet/jsr352/pull/540)
 
-And it contains these Jakarta API related components upgrades::
+And it contains these Jakarta API related components upgrades:
 
 - [Bump jakarta.annotation:jakarta.annotation-api from 2.1.1 to 3.0.0 #506](https://github.com/jberet/jsr352/pull/501)
 - [Bump jakarta.enterprise:jakarta.enterprise.cdi-api from 4.0.1 to 4.1.0 #511](https://github.com/jberet/jsr352/pull/511)
+
+Because JBeret uses the basic usages of the `annotation-api` and the `cdi-api`, so generally speaking, the upgrade of the above two components doesn't introduce any major changes into the project. In addition, when the JBeret is used in an integrated environment, such as the `batch-jberet` module inside the WildFly, it will inherit the `annotation-api` and `cdi-api` versions used by WildFly itself. So this is a difference between JBeret SE and JBeret used inside an integrated environment like WildFly.
 
 At last, there are relative tasks related with the Batch TCK testings that are done during the phase of this release:
 
