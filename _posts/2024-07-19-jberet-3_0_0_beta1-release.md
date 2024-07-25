@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "The Release Note Of JBeret 3.0.0.Beta1"
+title:      "The Release Note of JBeret 3.0.0.Beta1"
 subtitle:   ""
 date:       2024-07-19
 author:     Wei Nan Li
