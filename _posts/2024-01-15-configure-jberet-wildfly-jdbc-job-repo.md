@@ -43,7 +43,7 @@ As the configuration shown above, the default `job-repository` is `in-memory`. W
 As the configuration shown above, we have changed the `job-repository` to `jdbc`, and we have set the `data-source` to `ExampleDS`. The `ExampleDS` datasource is provided by WildFly server by default, here is the configuration of the `ExampleDS`  datasource in `standalone.xml`:
 
 ```xml
-subsystem xmlns="urn:jboss:domain:datasources:7.1">
+<subsystem xmlns="urn:jboss:domain:datasources:7.1">
     <datasources>
         <datasource jndi-name="java:jboss/datasources/ExampleDS" pool-name="ExampleDS" enabled="true" use-java-context="true" statistics-enabled="${wildfly.datasources.statistics-enabled:${wildfly.statistics-enabled:false}}">
             <connection-url>jdbc:h2:mem:test;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;MODE=${wildfly.h2.compatibility.mode:REGULAR}</connection-url>
@@ -115,7 +115,7 @@ And the service can be accessed with the following command:
 
 ```bash
 ➤ curl http://localhost:8080/batch-deployment/batch/start
-COMPLETED⏎                                                                                                                                                                               
+COMPLETED
 ```
 
 And now we can check whether the job repository database files exists:
