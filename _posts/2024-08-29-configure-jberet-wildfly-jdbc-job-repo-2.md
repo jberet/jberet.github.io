@@ -121,7 +121,7 @@ If you'd like to see how to integrate the configuration process into `wildfly-ma
 
 And configure it into `wildfly-maven-plugin` like this:
 
-- https://github.com/jberet/jberet-tck-runner/blob/main/pom.xml#L126
+- [https://github.com/jberet/jberet-tck-runner/blob/main/pom.xml#L126](https://github.com/jberet/jberet-tck-runner/blob/main/pom.xml#L126)
 
 ```xml
 <execution>
