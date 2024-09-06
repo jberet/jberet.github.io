@@ -108,3 +108,37 @@ After clicking the `Edit` button, we can see the `Data Source` we have added by 
 ![](https://raw.githubusercontent.com/jberet/jberet.github.io/main/_imgs/2024-08-29/image 4.png)
 
 Until now, we have learned about using the **CLI tool** and the **Admin console** to configure the **Batch Subsystem** to use the JDBC job repository.
+
+## Extra Ways of Configuration
+
+If you'd like to see how to add a data source and configure the batch subsystem via CLI command line, here is an example for reference:
+
+- [https://github.com/jberet/jberet-examples/blob/main/deployment/setup-server.sh](https://github.com/jberet/jberet-examples/blob/main/deployment/setup-server.sh)
+
+If you'd like to see how to integrate the configuration process into `wildfly-maven-plugin`, you can write a `.cli` file like this:
+
+- [https://github.com/jberet/jberet-tck-runner/blob/main/src/main/resources/configure-wildfly.cli](https://github.com/jberet/jberet-tck-runner/blob/main/src/main/resources/configure-wildfly.cli)
+
+And configure it into `wildfly-maven-plugin` like this:
+
+- https://github.com/jberet/jberet-tck-runner/blob/main/pom.xml#L126
+
+```xml
+<execution>
+    <id>configure-wildfly</id>
+    <phase>pre-integration-test</phase>
+    <goals>
+        <goal>execute-commands</goal>
+    </goals>
+    <configuration>
+        <skip>${skip.configuration}</skip>
+        <jboss-home>${jboss.home}</jboss-home>
+        <offline>true</offline>
+        <scripts>
+            <script>${project.build.outputDirectory}/configure-wildfly.cli</script>
+        </scripts>
+    </configuration>
+</execution>
+```
+
+Above is the more automated configuration methods.
