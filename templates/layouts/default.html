@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>{cdi:info.title} | {cdi:info.description}</title>
+    {#seo page site /}
+    <link rel="stylesheet" href="/assets/main.css">
+    <link type="application/atom+xml" rel="alternate" href="/feed.xml" title="{cdi:info.title}"/>
+</head>
+<body>
+<header class="site-header" role="banner">
+    <div class="wrapper">
+        <a class="site-title" rel="author" href="/">{cdi:info.title}</a>
+        <nav class="site-nav">
+            <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+        </nav>
+    </div>
+</header>
+<main class="page-content" aria-label="Content">
+    <div class="wrapper">
+        {#insert /}
+    </div>
+</main>
+<footer class="site-footer h-card">
+    <data class="u-url" href="/"></data>
+
+    <div class="wrapper">
+
+        <h2 class="footer-heading">{cdi:info.title}</h2>
+
+        <div class="footer-col-wrapper">
+            <div class="footer-col footer-col-1">
+                <ul class="contact-list">
+                    <li class="p-name">{cdi:info.title}</li>
+                    <li><a class="u-email" href="mailto:{cdi:info.email}">{cdi:info.email}</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer-col footer-col-2">
+                <ul class="social-media-list">
+                    <li><a href="https://github.com/{cdi:info.github_username}">
+                        <svg class="svg-icon">
+                            <use xlink:href="/assets/minima-social-icons.svg#github"></use>
+                        </svg>
+                        <span class="username">{cdi:info.github_username}</span></a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col footer-col-3">
+                <p>{cdi:info.title}</p>
+            </div>
+        </div>
+
+    </div>
+
+</footer>
+</body>
+
+</html>
