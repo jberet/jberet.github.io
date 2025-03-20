@@ -1,7 +1,19 @@
-.DS_Store
+target
+
+# Intellij
+*.iml
+*.ipr
+*.iws
 .idea
-.jekyll-cache
-.jekyll-metadata
-.sass-cache
-_site
-vendor
+
+# Eclipse
+**/.settings
+**/.project
+**/.classpath
+**/.checkstyle
+**/.factorypath
+
+# VS Code
+**/.vscode/
+
+.DS_Store
