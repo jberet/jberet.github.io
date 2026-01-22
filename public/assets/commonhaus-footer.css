@@ -1,0 +1,67 @@
+/*
+ * Copyright The RESTEasy Authors
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+.commonhaus-footer .commonhaus-logo {
+    grid-column: 7/13;
+    grid-row: 1;
+    justify-self: center;
+    align-self: center;
+    padding-top: 20px;
+}
+
+.commonhaus-footer .commonhaus-logo img {
+    height: 30px
+}
+
+@media screen and (max-width: 1024px) {
+    .commonhaus-footer .commonhaus-logo {
+        grid-column: 6/12;
+        justify-self: center
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .commonhaus-footer .commonhaus-logo {
+        grid-column: 5/11
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .commonhaus-footer .commonhaus-logo {
+        grid-column: 1/13;
+        justify-self: center;
+        order: 1
+    }
+}
+
+.commonhaus-footer .commonhaus-legal {
+    grid-column: 1/13;
+    grid-row: 2;
+    align-self: start;
+    justify-self: center;
+    font-size: .75rem;
+    max-width: 1100px;
+}
+
+@media screen and (max-width: 1024px) {
+    .commonhaus-footer .commonhaus-legal {
+        grid-column: 1/12;
+        justify-self: center
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .commonhaus-footer .commonhaus-legal {
+        grid-column: 1/11
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .commonhaus-footer .commonhaus-legal {
+        grid-column: 1/13;
+        justify-self: center;
+        order: 2
+    }
+}
