@@ -6,6 +6,7 @@
     <title>{cdi:info.title} | {cdi:info.description}</title>
     {#seo page site /}
     <link rel="stylesheet" href="/assets/main.css">
+    <link rel="stylesheet" href="/assets/commonhaus-footer.css">
 </head>
 <body>
 <header class="site-header" role="banner">
@@ -22,8 +23,6 @@
     </div>
 </main>
 <footer class="site-footer h-card">
-    <data class="u-url" href="/"></data>
-
     <div class="wrapper">
 
         <h2 class="footer-heading">{cdi:info.title}</h2>
@@ -47,11 +46,22 @@
                 </ul>
             </div>
 
-            <div class="footer-col footer-col-3">
-                <p>{cdi:info.title}</p>
-            </div>
         </div>
+    </div>
 
+    <div class="commonhaus-footer">
+        <div class="commonhaus-logo">
+            <a href="https://www.commonhaus.org/" target="_blank"><img
+                    src="https://raw.githubusercontent.com/commonhaus/artwork/main/foundation/brand/svg/CF_logo_horizontal_single_default.svg"/></a>
+        </div>
+        <div class="commonhaus-footer commonhaus-legal">
+            Copyright &copy; <a href="{site.url('/')}">JBeret</a>.
+            All rights reserved. For details on our trademarks, please visit our <a
+                href="https://www.commonhaus.org/policies/trademark-policy/">Trademark Policy</a> and
+            <a href="https://www.commonhaus.org/trademarks/">Trademark List</a>. Trademarks of third parties are
+            owned by their respective holders and their mention
+            here does not suggest any endorsement or association.
+        </div>
     </div>
 
 </footer>
